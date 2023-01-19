@@ -41,6 +41,7 @@ class RecentReleaseAdapter(val context : Context) : PagingDataAdapter<RecentRele
     }
 
     override fun onBindViewHolder(holder: ItemHolder, position: Int) {
+        holder.setIsRecyclable(false)
         val item = getItem(position)
        binding.AnimeName.text = item?.animeTitle
         Glide.with(context).load(item?.animeImg).into(binding.recentImageView)
